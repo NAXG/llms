@@ -380,7 +380,7 @@ export class GeminiTransformer implements Transformer {
 
       const stream = new ReadableStream({
         async start(controller) {
-          const reader = response.bofdy!.getReader();
+          const reader = response.body!.getReader();
           let buffer = "";
           try {
             while (true) {

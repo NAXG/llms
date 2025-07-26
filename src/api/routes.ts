@@ -34,12 +34,12 @@ export const registerApiRoutes: FastifyPluginAsync = async (
         transformer.endPoint,
         async (req: FastifyRequest, reply: FastifyReply) => {
           const body = req.body as any;
-          const providerNmae = req.provider!;
+          const providerName = req.provider!;
           const provider =
-            fastify._server!.providerService.getProvider(providerNmae);
+            fastify._server!.providerService.getProvider(providerName);
           if (!provider) {
             throw createApiError(
-              `Provider '${providerNmae}' not found`,
+              `Provider '${providerName}' not found`,
               404,
               "provider_not_found"
             );
